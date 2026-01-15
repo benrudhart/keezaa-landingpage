@@ -1,11 +1,11 @@
 # AppView
 
 <p align="center">
-  <img src="./public/app_view/readme_logo_light.png#gh-light-mode-only" alt="Fancy logo" />
-  <img src="./public/app_view/readme_logo_dark.png#gh-dark-mode-only" alt="Fancy logo" />
+  <img src="./public/app_view/readme_logo_light.png#gh-light-mode-only" style="width: 100px; height: 100px;" alt="AppView logo" />
+  <img src="./public/app_view/readme_logo_dark.png#gh-dark-mode-only" style="width: 100px; height: 100px;" alt="AppView logo" />
 </p>
 
-<p align="center">
+<p align="center" style="display: flex; gap: 20px; justify-content: center; margin-bottom: 40px;">
   <a href="https://appview.dev" >
     AppView Website
   </a>
