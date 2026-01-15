@@ -5,8 +5,8 @@
   <img src="./public/app_view/readme_logo_dark.png#gh-dark-mode-only" style="width: 100px; height: 100px;" alt="AppView logo" />
 </p>
 
-<p align="center" style="display: flex; gap: 20px; justify-content: center; margin-bottom: 40px;">
-  <a href="https://appview.dev" >
+<p align="center">
+  <a href="https://appview.dev" style="margin-right: 20px;">
     AppView Website
   </a>
   <a href="https://appview.dev/docs">
