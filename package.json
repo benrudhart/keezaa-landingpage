@@ -1,7 +1,8 @@
 {
-  "name": "ripples-website",
+  "name": "app-view",
   "version": "1.0.0",
-  "description": "",
+  "private": true,
+  "description": "Website template for iOS apps",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
@@ -13,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mykolaharmash/checker-website.git"
+    "url": "git+https://github.com/overthink-software/app-view.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mykolaharmash/checker-website/issues"
+    "url": "https://github.com/overthink-software/app-view/issues"
   },
-  "homepage": "https://github.com/mykolaharmash/checker-website#readme",
+  "homepage": "https://github.com/overthink-software/app-view#readme",
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
