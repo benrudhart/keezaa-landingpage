@@ -42,6 +42,9 @@ export const MATERIAL_SYMBOLS = [
   "play_arrow",
   "pause",
   "star",
+  "no_accounts",
+  "cloud",
+  "sentiment_calm",
 ] as const;
 
 // Neutral

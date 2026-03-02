@@ -1,5 +1,6 @@
 import { CardGrid } from "@/components/card_grid/card_grid";
 import { DownloadActionButton } from "@/components/download_action_button/download_action_button";
+import { HighlightsSection } from "@/components/highlights_section/highlights_section";
 import { Hero } from "@/components/hero/hero";
 import { Section } from "@/components/section/section";
 import { TestimonialsSection } from "@/components/testimonials_section/testimonials_section";
@@ -80,16 +81,12 @@ export default function Page() {
             description="Beliebig viele Pläne verwalten und auf Watch oder iPhone trainieren."
           />
 
-          <CardGrid.IconCard
-            maxWidth="third"
-            iconName="lock"
-            title="Datenschutz"
-            description="Deine Daten werden ausschließlich über deine private iCloud synchronisiert. Niemand sonst hat Einblick."
-          />
         </CardGrid>
       </Section>
 
       <TestimonialsSection />
+
+      <HighlightsSection />
 
       <Section paddingTop={60} paddingBottom={160}>
         <DownloadActionButton
