@@ -10,6 +10,7 @@ import { AppIcon } from "@/components/app_icon/app_icon";
 
 interface OpenGraphPreviewProps {
   title: string;
+  subtitle?: string;
   titleFontStyle?: FontStyle;
   iconSrc: string;
   screenshotSrc: string;
@@ -31,6 +32,7 @@ export const OPEN_GRAPH_BUILDER_THEME_ROOT_CONTAINER_CLASSNAME =
 
 function OpenGraphPreviewContent({
   title,
+  subtitle,
   titleFontStyle,
   iconSrc,
   screenshotSrc,
@@ -66,7 +68,10 @@ function OpenGraphPreviewContent({
     >
       <div className={styles.content}>
         <AppIcon src={iconSrc} size={180} />
-        <h1 className={`${styles.title} ${titleFontStyleClass}`}>{title}</h1>
+        <div className={styles.textContent}>
+          <h1 className={`${styles.title} ${titleFontStyleClass}`}>{title}</h1>
+          {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+        </div>
       </div>
 
       <div className={styles.screenshot}>
