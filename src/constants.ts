@@ -36,6 +36,11 @@ export const MATERIAL_SYMBOLS = [
   "folder_copy",
   "lock",
   "open_in_new",
+  "send",
+  "check_circle",
+  "open_in_full",
+  "play_arrow",
+  "pause",
   "star",
 ] as const;
 
