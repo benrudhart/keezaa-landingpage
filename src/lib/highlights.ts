@@ -1,4 +1,6 @@
-export type SupportedHighlightLocale = "de" | "en";
+import type { Locale } from "@/lib/i18n";
+
+export type SupportedHighlightLocale = Locale;
 
 interface HighlightItem {
   iconName: "no_accounts" | "cloud" | "sentiment_calm";
@@ -60,12 +62,6 @@ const HIGHLIGHTS_BY_LOCALE: Record<SupportedHighlightLocale, HighlightsContent> 
       ],
     },
   };
-
-export function resolveHighlightLocale(
-  input?: string | null,
-): SupportedHighlightLocale {
-  return input?.trim().toLowerCase().startsWith("de") ? "de" : "en";
-}
 
 export function getHighlights(locale: SupportedHighlightLocale = "de") {
   return HIGHLIGHTS_BY_LOCALE[locale];

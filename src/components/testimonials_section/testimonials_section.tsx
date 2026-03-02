@@ -1,21 +1,11 @@
-"use client";
-
 import { Section } from "@/components/section/section";
 import { TestimonialsGrid } from "@/components/testimonials_grid/testimonials_grid";
 import {
   getTestimonials,
-  resolveTestimonialLocale,
-  type SupportedTestimonialLocale,
 } from "@/lib/testimonials";
-import { useEffect, useState } from "react";
+import type { Locale } from "@/lib/i18n";
 
-export function TestimonialsSection() {
-  const [locale, setLocale] = useState<SupportedTestimonialLocale>("de");
-
-  useEffect(() => {
-    setLocale(resolveTestimonialLocale(navigator.language));
-  }, []);
-
+export function TestimonialsSection({ locale }: { locale: Locale }) {
   const content = getTestimonials(locale);
 
   return (

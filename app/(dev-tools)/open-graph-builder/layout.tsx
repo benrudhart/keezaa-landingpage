@@ -22,13 +22,11 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" data-theme={THEME}>
-      <head>
-        <ThemeStyle
-          themeRootContainer={`.${OPEN_GRAPH_BUILDER_THEME_ROOT_CONTAINER_CLASSNAME}`}
-        />
-      </head>
-      <body>{children}</body>
-    </html>
+    <>
+      <ThemeStyle
+        themeRootContainer={`.${OPEN_GRAPH_BUILDER_THEME_ROOT_CONTAINER_CLASSNAME}`}
+      />
+      <div data-theme={THEME}>{children}</div>
+    </>
   );
 }

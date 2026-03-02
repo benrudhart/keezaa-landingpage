@@ -1,0 +1,54 @@
+export interface FeatureItem {
+  iconName:
+    | "timer"
+    | "fitness_center"
+    | "assignment"
+    | "watch"
+    | "timeline"
+    | "favorite"
+    | "tune"
+    | "folder_copy";
+  title: string;
+  description: string;
+}
+
+export interface SiteDictionary {
+  metadata: {
+    title: string;
+    description: string;
+    openGraphTitle: string;
+    openGraphDescription: string;
+  };
+  navbar: {
+    features: string;
+    testimonials: string;
+    values: string;
+    contact: string;
+  };
+  hero: {
+    title: string;
+    subtitle: string;
+    downloadLabel: string;
+  };
+  features: {
+    items: FeatureItem[];
+  };
+  footer: {
+    privacy: string;
+    terms: string;
+    followUpdates: string;
+    language: string;
+    rightsReserved: string;
+    builtWith: string;
+  };
+  legal: {
+    privacyTitle: string;
+    appPrivacyTitle: string;
+    appTermsTitle: string;
+  };
+  releaseNotes: {
+    title: string;
+    olderNotes: string;
+    newerNotes: string;
+  };
+}

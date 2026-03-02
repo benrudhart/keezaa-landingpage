@@ -1,3 +1,5 @@
+import type { Locale } from "@/lib/i18n";
+
 export interface TestimonialReview {
   title: string;
   author: string;
@@ -271,32 +273,6 @@ const TESTIMONIALS_BY_LOCALE: Record<
   },
 };
 
-export function resolveTestimonialLocale(
-  input?: string | null,
-): SupportedTestimonialLocale {
-  if (!input) {
-    return "de";
-  }
-
-  const normalized = input.trim().toLowerCase();
-
-  for (const locale of SUPPORTED_TESTIMONIAL_LOCALES) {
-    if (normalized === locale.toLowerCase()) {
-      return locale;
-    }
-  }
-
-  const language = normalized.split("-")[0];
-
-  for (const locale of SUPPORTED_TESTIMONIAL_LOCALES) {
-    if (locale.toLowerCase().split("-")[0] === language) {
-      return locale;
-    }
-  }
-
-  return "de";
-}
-
-export function getTestimonials(locale: SupportedTestimonialLocale = "de") {
+export function getTestimonials(locale: Locale = "de") {
   return TESTIMONIALS_BY_LOCALE[locale];
 }

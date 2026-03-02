@@ -25,9 +25,7 @@ export function Navbar({ icon, appName, links, action }: NavbarProps) {
 
             <ul className={styles.navLinks}>
               {links?.map((link) => {
-                const href = link.href.startsWith("#")
-                  ? `/${link.href}`
-                  : link.href;
+                const href = link.href;
 
                 return (
                   <li key={link.href} className={styles.navLinkItem}>

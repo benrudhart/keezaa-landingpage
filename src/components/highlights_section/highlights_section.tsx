@@ -1,21 +1,11 @@
-"use client";
-
 import { CardGrid } from "@/components/card_grid/card_grid";
 import { Section } from "@/components/section/section";
 import {
   getHighlights,
-  resolveHighlightLocale,
-  type SupportedHighlightLocale,
 } from "@/lib/highlights";
-import { useEffect, useState } from "react";
+import type { Locale } from "@/lib/i18n";
 
-export function HighlightsSection() {
-  const [locale, setLocale] = useState<SupportedHighlightLocale>("de");
-
-  useEffect(() => {
-    setLocale(resolveHighlightLocale(navigator.language));
-  }, []);
-
+export function HighlightsSection({ locale }: { locale: Locale }) {
   const content = getHighlights(locale);
 
   return (

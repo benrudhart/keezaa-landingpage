@@ -1,12 +1,11 @@
 "use client";
 
 import { APP_ID } from "@/constants";
+import { type Locale } from "@/lib/i18n";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import styles from "./referral_page.module.css";
-
-type Locale = "de" | "en";
 
 const CONTENT = {
   de: {
@@ -59,17 +58,13 @@ const CONTENT = {
   },
 } as const;
 
-export function ReferralPage() {
-  const [locale, setLocale] = useState<Locale>("de");
+export function ReferralPage({ locale }: { locale: Locale }) {
   const [code, setCode] = useState("");
   const [copyFeedback, setCopyFeedback] = useState("");
   const [isIOS, setIsIOS] = useState(false);
 
   useEffect(() => {
-    const nextLocale = detectLocale();
     const nextCode = readReferralCode();
-
-    setLocale(nextLocale);
     setCode(nextCode);
     setIsIOS(detectIOSDevice());
   }, []);
@@ -120,7 +115,7 @@ export function ReferralPage() {
       <main className={styles.page}>
         <section className={styles.section}>
           <div className={styles.shell}>
-            <h1 className={styles.title}>{t.invalidTitle}</h1>
+          <h1 className={styles.title}>{t.invalidTitle}</h1>
             <p className={styles.invalidMessage}>{t.invalidMessage}</p>
             <Link href="/" className={styles.secondaryAction}>
               {t.backHome}
@@ -209,14 +204,6 @@ export function ReferralPage() {
       </section>
     </main>
   );
-}
-
-function detectLocale(): Locale {
-  if (typeof navigator === "undefined") {
-    return "de";
-  }
-
-  return navigator.language.toLowerCase().startsWith("de") ? "de" : "en";
 }
 
 function readReferralCode(): string {

@@ -5,6 +5,8 @@ type ReleaseNotesPaginationProps = {
   currentPage: number;
   totalPageCount: number;
   basePath?: string;
+  olderLabel?: string;
+  newerLabel?: string;
 };
 
 function buildPageHref(page: number, basePath: string) {
@@ -15,6 +17,8 @@ export function ReleaseNotesPagination({
   currentPage,
   totalPageCount,
   basePath = "/release-notes",
+  olderLabel = "Older Notes",
+  newerLabel = "Newer Notes",
 }: ReleaseNotesPaginationProps) {
   const newerDisabled = currentPage <= 1;
   const olderDisabled = currentPage >= totalPageCount;
@@ -25,12 +29,12 @@ export function ReleaseNotesPagination({
   return (
     <nav className={styles.pagination} aria-label="Release notes pagination">
       <PaginationButton
-        label="Older Notes"
+        label={olderLabel}
         href={olderHref}
         disabled={olderDisabled}
       />
       <PaginationButton
-        label="Newer Notes"
+        label={newerLabel}
         href={newerHref}
         disabled={newerDisabled}
       />

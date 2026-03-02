@@ -45,6 +45,7 @@ export const MATERIAL_SYMBOLS = [
   "no_accounts",
   "cloud",
   "sentiment_calm",
+  "language",
 ] as const;
 
 // Keezaa
