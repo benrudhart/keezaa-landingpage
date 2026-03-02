@@ -14,8 +14,8 @@ export default function Page() {
           subtitle="Die smarte Trainings-App für Kieser-Training®. Stoppuhr, Plan und Historie direkt am Handgelenk."
           media={
             <Hero.Image
-              src="/app_view/screenshot_placeholder.png"
-              bezel="iPhone 17 Black"
+              src="/hero-screenshot.png"
+              bezel="iPhone Air Space Black"
               alt="Keezaa App Screenshot"
             />
           }
