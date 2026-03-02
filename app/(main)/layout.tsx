@@ -108,6 +108,11 @@ export default function RootLayout({
                     href: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
                     external: true,
                   },
+                  {
+                    label: "Follow Updates",
+                    href: "https://github.com/benrudhart",
+                    external: true,
+                  },
                 ]}
                 footnoteLeading={`© ${new Date().getFullYear()} Keezaa. Alle Rechte vorbehalten.`}
                 footnoteTrailing={
