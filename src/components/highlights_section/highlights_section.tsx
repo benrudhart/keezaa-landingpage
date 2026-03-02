@@ -1,12 +1,10 @@
 import { CardGrid } from "@/components/card_grid/card_grid";
 import { Section } from "@/components/section/section";
-import {
-  getHighlights,
-} from "@/lib/highlights";
+import { getDictionary } from "@/dictionaries";
 import type { Locale } from "@/lib/i18n";
 
 export function HighlightsSection({ locale }: { locale: Locale }) {
-  const content = getHighlights(locale);
+  const content = getDictionary(locale).highlights;
 
   return (
     <Section title={content.sectionTitle} navigationAnchor="values">

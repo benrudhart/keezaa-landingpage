@@ -1,6 +1,6 @@
 import { ReferralPage } from "@/components/referral_page/referral_page";
 import { getDictionary } from "@/dictionaries";
-import { DEFAULT_LOCALE, isSupportedLocale, type Locale } from "@/lib/i18n";
+import { resolveLocale } from "@/lib/i18n";
 import type { Metadata } from "next";
 
 export async function generateMetadata({
@@ -9,7 +9,7 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const locale = isSupportedLocale(lang) ? (lang as Locale) : DEFAULT_LOCALE;
+  const locale = resolveLocale(lang);
   const dict = getDictionary(locale);
 
   return {
@@ -33,7 +33,7 @@ export default async function Page({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  const locale = isSupportedLocale(lang) ? (lang as Locale) : DEFAULT_LOCALE;
+  const locale = resolveLocale(lang);
   const dict = getDictionary(locale);
 
   return <ReferralPage locale={locale} content={dict.referral} />;

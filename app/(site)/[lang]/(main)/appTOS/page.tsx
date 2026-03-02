@@ -1,9 +1,7 @@
-import { DEFAULT_LOCALE, isSupportedLocale, type Locale } from "@/lib/i18n";
+import { APP_TERMS_CONTENT } from "@/content/legal/index";
 import { getDictionary } from "@/dictionaries";
+import { resolveLocale } from "@/lib/i18n";
 import type { Metadata } from "next";
-import AppTermsDe from "./content.de.mdx";
-import AppTermsEn from "./content.en.mdx";
-import AppTermsZh from "./content.zh.mdx";
 
 export async function generateMetadata({
   params,
@@ -11,7 +9,7 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const locale = isSupportedLocale(lang) ? (lang as Locale) : DEFAULT_LOCALE;
+  const locale = resolveLocale(lang);
   const dict = getDictionary(locale);
 
   return {
@@ -33,15 +31,7 @@ export default async function AppTermsPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  const locale = isSupportedLocale(lang) ? (lang as Locale) : DEFAULT_LOCALE;
-
-  if (locale === "de") {
-    return <AppTermsDe />;
-  }
-
-  if (locale === "zh") {
-    return <AppTermsZh />;
-  }
-
-  return <AppTermsEn />;
+  const locale = resolveLocale(lang);
+  const renderContent = APP_TERMS_CONTENT[locale];
+  return renderContent();
 }

@@ -1,6 +1,7 @@
 import { APP_ID, IS_WAITLIST_ENABLED, THEME } from "@/constants";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { Suspense } from "react";
 
 import { getDictionary } from "@/dictionaries";
 import { AppIcon } from "@/components/app_icon/app_icon";
@@ -14,7 +15,7 @@ import { Navbar } from "@/components/navbar/navbar";
 import { ThemeStyle } from "@/components/theme_style/theme_style";
 import "@/global.css";
 import { ThemeProvider } from "@/providers/theme_provider";
-import { DEFAULT_LOCALE, isSupportedLocale, localizePath } from "@/lib/i18n";
+import { isSupportedLocale, localizePath, resolveLocale } from "@/lib/i18n";
 import { Section } from "@/components/section/section";
 import { notFound } from "next/navigation";
 
@@ -29,7 +30,7 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const locale = isSupportedLocale(lang) ? lang : DEFAULT_LOCALE;
+  const locale = resolveLocale(lang);
   const dict = getDictionary(locale);
   const pathPrefix = `/${locale}`;
 
@@ -132,10 +133,12 @@ export default async function RootLayout({
                   },
                 ]}
                 utility={
-                  <LanguageSwitcher
-                    locale={locale}
-                    title={dict.footer.language}
-                  />
+                  <Suspense fallback={null}>
+                    <LanguageSwitcher
+                      locale={locale}
+                      title={dict.footer.language}
+                    />
+                  </Suspense>
                 }
                 footnoteLeading={`© ${new Date().getFullYear()} Keezaa. ${dict.footer.rightsReserved}`}
               />

@@ -5,7 +5,7 @@ import { Hero } from "@/components/hero/hero";
 import { Section } from "@/components/section/section";
 import { TestimonialsSection } from "@/components/testimonials_section/testimonials_section";
 import { CardGrid } from "@/components/card_grid/card_grid";
-import { DEFAULT_LOCALE, isSupportedLocale, type Locale } from "@/lib/i18n";
+import { resolveLocale } from "@/lib/i18n";
 
 export default async function Page({
   params,
@@ -13,7 +13,7 @@ export default async function Page({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  const locale = isSupportedLocale(lang) ? (lang as Locale) : DEFAULT_LOCALE;
+  const locale = resolveLocale(lang);
   const dict = getDictionary(locale);
 
   return (

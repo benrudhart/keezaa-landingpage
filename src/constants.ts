@@ -1,4 +1,3 @@
-import { Caveat, Dancing_Script } from "next/font/google";
 import { ColorScheme } from "./types/shared";
 
 /**
@@ -20,10 +19,9 @@ export const APP_ID = "1337707625";
 /**
  * Custom fonts for 'whimsical' and 'cursive' font styles.
  * Default system font is used for all other font styles.
- * See https://nextjs.org/docs/app/getting-started/fonts#google-fonts
  */
-export const WHIMSICAL_FONT = Caveat({ subsets: ["latin"] });
-export const CURSIVE_FONT = Dancing_Script({ subsets: ["latin"] });
+export const WHIMSICAL_FONT = { className: "" } as const;
+export const CURSIVE_FONT = { className: "" } as const;
 
 export const MATERIAL_SYMBOLS = [
   "timer",

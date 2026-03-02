@@ -76,6 +76,64 @@ export const enDictionary: SiteDictionary = {
       },
     ],
   },
+  testimonials: {
+    sectionTitle: "What users say",
+    reviews: [
+      {
+        title: "Totally recommend it",
+        author: "Mstein182",
+        message:
+          "My conclusion: totally recommend it. I especially love the vibration on the Apple Watch that lets you know when to start and when to switch directions.",
+      },
+      {
+        title: "Awesome",
+        author: "Da.niel001",
+        message:
+          "Cool design, super easy to use, and no annoying ads 👍",
+      },
+      {
+        title: "Finally, an app for my training",
+        author: "Kehri 89",
+        message:
+          "Great app for my workouts, haven't found anything better so far.",
+      },
+      {
+        title: "Really good",
+        author: "HSIgk",
+        message:
+          "The app is the perfect addition to Kieser Training with the Apple Watch! Exporting workouts works great too.",
+      },
+      {
+        title: "Awesome app for working out with great support",
+        author: "TestSchreiber987",
+        message:
+          "I'm really happy overall. Especially with the Apple Watch, it's super easy to use. I think the app really makes training easier!",
+      },
+    ],
+  },
+  highlights: {
+    sectionTitle: "An app with values",
+    items: [
+      {
+        iconName: "no_accounts",
+        title: "No sign up",
+        description:
+          "You can start right away. Keezaa uses your Apple Account and does not require a separate sign up.",
+      },
+      {
+        iconName: "cloud",
+        title: "Private by design",
+        description:
+          "No one has access to your data except you. Not the developers, Kieser, or Apple can view your workout data.",
+      },
+      {
+        iconName: "sentiment_calm",
+        title: "No ads",
+        description:
+          "No ads, no annoying prompts, no growth noise. Just your workout and the data you actually need.",
+      },
+    ],
+  },
   footer: {
     privacy: "Privacy",
     terms: "Terms",

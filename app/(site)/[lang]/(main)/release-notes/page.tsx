@@ -6,7 +6,7 @@ import {
   readReleaseNotesPage,
   readTotalReleaseNotesPageCount,
 } from "@/lib/release_notes_helpers";
-import { DEFAULT_LOCALE, isSupportedLocale, localizePath, type Locale } from "@/lib/i18n";
+import { localizePath, resolveLocale } from "@/lib/i18n";
 
 export default async function ReleaseNotesIndexPage({
   params,
@@ -14,7 +14,7 @@ export default async function ReleaseNotesIndexPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  const locale = isSupportedLocale(lang) ? (lang as Locale) : DEFAULT_LOCALE;
+  const locale = resolveLocale(lang);
   const dict = getDictionary(locale);
   const totalPageCount = await readTotalReleaseNotesPageCount(
     MAX_RELEASE_NOTES_PER_PAGE

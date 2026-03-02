@@ -23,6 +23,8 @@
 		"paths": {
 			"@/*": ["./src/*"],
       "@/public/*": ["./public/*"],
+			"@/content/legal": ["./src/content/legal/index.ts"],
+			"@/content/legal/*": ["./src/content/legal/*"],
 			"@/content/*": ["app/(main)/release-notes/content/*"]
     }
 	},

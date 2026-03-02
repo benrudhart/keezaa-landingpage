@@ -95,7 +95,9 @@ export async function readReleaseNotesPage(
 
   return Promise.all(
     pageFiles.map(async (file) => {
-      const noteModule = await import(`@/content/${file.fileName}`);
+      const noteModule = await import(
+        `../../app/(main)/release-notes/content/${file.fileName}`
+      );
       let frontmatterMetadata: ReleaseNoteFrontmatterMetadata;
 
       if (guardFrontmatterMetadata(noteModule.metadata)) {

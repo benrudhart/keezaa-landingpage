@@ -1,12 +1,10 @@
 import { Section } from "@/components/section/section";
 import { TestimonialsGrid } from "@/components/testimonials_grid/testimonials_grid";
-import {
-  getTestimonials,
-} from "@/lib/testimonials";
+import { getDictionary } from "@/dictionaries";
 import type { Locale } from "@/lib/i18n";
 
 export function TestimonialsSection({ locale }: { locale: Locale }) {
-  const content = getTestimonials(locale);
+  const content = getDictionary(locale).testimonials;
 
   return (
     <Section

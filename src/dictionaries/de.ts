@@ -76,6 +76,64 @@ export const deDictionary: SiteDictionary = {
       },
     ],
   },
+  testimonials: {
+    sectionTitle: "Das sagen Nutzer:innen",
+    reviews: [
+      {
+        title: "Absolut empfehlenswert",
+        author: "Mstein182",
+        message:
+          "Mein Fazit: absolut empfehlenswert. Ganz besonders angenehm finde ich die Vibration am Handgelenk der Apple Watch, die signalisiert, wann es los geht und wann die Richtung geändert werden muss.",
+      },
+      {
+        title: "Top",
+        author: "Da.niel001",
+        message:
+          "Cooles Design, einfach zu bedienen und keine nervigen Werbeunterbrechungen 👍",
+      },
+      {
+        title: "Endlich eine App für mein Training",
+        author: "Kehri 89",
+        message:
+          "Super App für mein Training, bisher nichts besseres gefunden.",
+      },
+      {
+        title: "Sehr gut",
+        author: "HSIgk",
+        message:
+          "Die App ist die optimale Ergänzung zum Kieser Training mit der Apple Watch! Der Export der Übungen klappt auch super.",
+      },
+      {
+        title: "Top App zum trainieren mit gutem Support",
+        author: "TestSchreiber987",
+        message:
+          "Bin insgesamt sehr zufrieden. Gerade in Kombination mit der Apple Watch sehr intuitive Bedienung. Ich finde, die App erleichtert das Training!",
+      },
+    ],
+  },
+  highlights: {
+    sectionTitle: "Eine App mit Prinzipien",
+    items: [
+      {
+        iconName: "no_accounts",
+        title: "Kein Sign-up",
+        description:
+          "Du kannst direkt loslegen. Keezaa nutzt dein Apple Konto und verlangt keine separate Registrierung.",
+      },
+      {
+        iconName: "cloud",
+        title: "Datenschutz by Design",
+        description:
+          "Niemand außer dir hat Zugriff auf deine Daten. Weder die Entwickler, Kieser oder Apple können deine Trainingsdaten einsehen.",
+      },
+      {
+        iconName: "sentiment_calm",
+        title: "Keine Werbung",
+        description:
+          "Keine Ads, keine störenden Pop-ups, kein Growth-Lärm. Nur dein Training und die Daten, die du wirklich brauchst.",
+      },
+    ],
+  },
   footer: {
     privacy: "Datenschutz",
     terms: "Nutzungsbedingungen",

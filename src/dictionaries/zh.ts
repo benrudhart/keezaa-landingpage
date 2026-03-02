@@ -76,6 +76,62 @@ export const zhDictionary: SiteDictionary = {
       },
     ],
   },
+  testimonials: {
+    sectionTitle: "用户评价",
+    reviews: [
+      {
+        title: "真的很推荐！",
+        author: "Mstein182",
+        message:
+          "我的结论：真的很推荐！我特别喜欢Apple Watch手腕上的震动提醒，能告诉我什么时候开始、什么时候要换方向，超贴心。",
+      },
+      {
+        title: "超棒",
+        author: "Da.niel001",
+        message: "设计很酷，操作简单，还没有烦人的广告打扰，赞👍",
+      },
+      {
+        title: "终于有一款适合我训练的 App 了",
+        author: "Kehri 89",
+        message: "超级适合我训练的App，到现在还没找到比它更好的。",
+      },
+      {
+        title: "非常棒！",
+        author: "HSIgk",
+        message:
+          "这个 App 搭配 Apple Watch 简直是 Kieser Training 的最佳搭档！导出训练内容也很顺利。",
+      },
+      {
+        title: "很棒的App，训练起来超方便，客服也很给力！",
+        author: "TestSchreiber987",
+        message:
+          "我整体上很满意，特别是和 Apple Watch 搭配用起来超级直观。感觉这个 App 真的让训练变轻松了！",
+      },
+    ],
+  },
+  highlights: {
+    sectionTitle: "这款应用的原则",
+    items: [
+      {
+        iconName: "no_accounts",
+        title: "无需注册",
+        description:
+          "打开即可开始使用。Keezaa 使用你的 Apple 账户，不需要额外注册。",
+      },
+      {
+        iconName: "cloud",
+        title: "隐私优先",
+        description:
+          "除了你自己，没有人可以访问你的数据。无论是开发者、Kieser 还是 Apple，都无法查看你的训练数据。",
+      },
+      {
+        iconName: "sentiment_calm",
+        title: "没有广告",
+        description:
+          "没有广告，没有烦人的弹窗，也没有增长噪音。只有你的训练，以及你真正需要的数据。",
+      },
+    ],
+  },
   footer: {
     privacy: "隐私",
     terms: "条款",

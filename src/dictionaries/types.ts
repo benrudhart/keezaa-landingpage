@@ -12,6 +12,18 @@ export interface FeatureItem {
   description: string;
 }
 
+export interface HighlightItem {
+  iconName: "no_accounts" | "cloud" | "sentiment_calm";
+  title: string;
+  description: string;
+}
+
+export interface TestimonialItem {
+  title: string;
+  author: string;
+  message: string;
+}
+
 export interface SiteDictionary {
   metadata: {
     title: string;
@@ -36,6 +48,14 @@ export interface SiteDictionary {
   };
   features: {
     items: FeatureItem[];
+  };
+  testimonials: {
+    sectionTitle: string;
+    reviews: TestimonialItem[];
+  };
+  highlights: {
+    sectionTitle: string;
+    items: HighlightItem[];
   };
   footer: {
     privacy: string;
