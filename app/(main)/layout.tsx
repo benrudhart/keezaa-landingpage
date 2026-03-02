@@ -77,10 +77,12 @@ export default function RootLayout({
           {!IS_WAITLIST_ENABLED && (
             <>
               <Navbar
-                icon={<AppIcon src="/app_view/icon_placeholder.png" />}
+                icon={<AppIcon src="/keezaa_app_icon.png" />}
                 appName="Keezaa"
                 links={[
                   { label: "Features", href: "#features" },
+                  { label: "Bewertungen", href: "#testimonials" },
+                  { label: "Werte", href: "#values" },
                   { label: "Kontakt", href: "mailto:support@keezaa.app" },
                 ]}
                 action={<DownloadActionButton />}
@@ -95,7 +97,7 @@ export default function RootLayout({
               <CompactFooter
                 appIcon={
                   <AppIcon
-                    src="/app_view/icon_placeholder.png"
+                    src="/keezaa_app_icon.png"
                     filter="grayscale"
                   />
                 }

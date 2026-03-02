@@ -19,7 +19,12 @@ export function TestimonialsSection() {
   const content = getTestimonials(locale);
 
   return (
-    <Section title={content.sectionTitle} paddingTop={40} paddingBottom={60}>
+    <Section
+      title={content.sectionTitle}
+      navigationAnchor="testimonials"
+      paddingTop={40}
+      paddingBottom={60}
+    >
       <TestimonialsGrid>
         {content.reviews.map((testimonial) => (
           <TestimonialsGrid.Testimonial

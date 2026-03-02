@@ -19,7 +19,7 @@ export function HighlightsSection() {
   const content = getHighlights(locale);
 
   return (
-    <Section title={content.sectionTitle}>
+    <Section title={content.sectionTitle} navigationAnchor="values">
       <CardGrid rowHeight={250}>
         {content.items.map((item) => (
           <CardGrid.IconCard
