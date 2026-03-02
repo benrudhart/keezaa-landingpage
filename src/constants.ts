@@ -15,7 +15,7 @@ export const THEME: "system" | "light" | "dark" = "system";
  *
  * Example: "6502667826"
  */
-export const APP_ID = "1234567890";
+export const APP_ID = "1337707625";
 
 /**
  * Custom fonts for 'whimsical' and 'cursive' font styles.

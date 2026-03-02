@@ -19,25 +19,17 @@ export const metadata: Metadata = {
    * Recommended length for title is max 60 characters.
    * Recommended length for description is max 160 characters.
    */
-  title: "Website title",
-  description: "Website description",
+  title: "Keezaa | Kieser-Training App",
+  description:
+    "Die smarte Trainings-App für Kieser-Training® – Stoppuhr, Trainingsplan und Historie direkt an deinem Handgelenk. Für Apple Watch und iPhone.",
 
-  /**
-   * Your website URL.
-   */
-  metadataBase: new URL("https://app-website-url.com"),
+  metadataBase: new URL("https://keezaa.app"),
 
-  /**
-   * Info inside `openGraph` and `twitter` is used to show rich previews
-   * on social media when someone shares a link to your website.
-   *
-   * AppView comes with a tool to help you generate an Open Graph image,
-   * run the dev server and go to `http://localhost:3000/open-graph-builder`.
-   */
   openGraph: {
-    title: "App title",
-    description: "App description",
-    url: "https://app-website-url.com",
+    title: "Keezaa – Die Trainings-App für Kieser®",
+    description:
+      "Stoppuhr, Trainingsplan und Historie direkt an deinem Handgelenk. Für Apple Watch und iPhone.",
+    url: "https://keezaa.app",
     images: [
       {
         url: "/og-preview.png",
@@ -50,8 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "App title",
-    description: "App description",
+    title: "Keezaa – Die Trainings-App für Kieser®",
+    description:
+      "Stoppuhr, Trainingsplan und Historie direkt an deinem Handgelenk. Für Apple Watch und iPhone.",
     images: ["/og-preview.png"],
   },
 };
@@ -67,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme={THEME}>
+    <html lang="de" data-theme={THEME}>
       <head>
         {/* This makes Safari on iOS show the App Store download banner */}
         {!IS_WAITLIST_ENABLED && (
@@ -85,12 +78,10 @@ export default function RootLayout({
             <>
               <Navbar
                 icon={<AppIcon src="/app_view/icon_placeholder.png" />}
-                appName="App Name"
+                appName="Keezaa"
                 links={[
                   { label: "Features", href: "#features" },
-                  // Uncomment the line below once you're ready to start using Release Notes
-                  // { label: "Release Notes", href: "/release-notes" },
-                  { label: "Contact", href: "mailto:your.email@gmail.com" },
+                  { label: "Kontakt", href: "mailto:support@keezaa.app" },
                 ]}
                 action={<DownloadActionButton />}
               />
@@ -109,18 +100,14 @@ export default function RootLayout({
                   />
                 }
                 links={[
-                  { label: "Privacy", href: "/privacy" },
+                  { label: "Datenschutz", href: "/privacy" },
                   {
-                    label: "Terms of Use",
+                    label: "Nutzungsbedingungen",
                     href: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
                     external: true,
                   },
-                  {
-                    label: "Follow Updates",
-                    href: "https://your-social-media.com",
-                  },
                 ]}
-                footnoteLeading={`© ${new Date().getFullYear()}. All rights reserved.`}
+                footnoteLeading={`© ${new Date().getFullYear()} Keezaa. Alle Rechte vorbehalten.`}
                 footnoteTrailing={
                   // I'd appreciate if you leave this link here, but feel free to remove it, no hard feelings :)
                   <>
