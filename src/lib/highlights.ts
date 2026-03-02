@@ -28,7 +28,7 @@ const HIGHLIGHTS_BY_LOCALE: Record<SupportedHighlightLocale, HighlightsContent> 
           iconName: "cloud",
           title: "Datenschutz by Design",
           description:
-            "Niemand außer dir hat Zugriff auf deine Daten. Weder Keezaa noch Apple können deine Trainingsdaten einsehen.",
+            "Niemand außer dir hat Zugriff auf deine Daten. Weder die Entwickler, Kieser oder Apple können deine Trainingsdaten einsehen.",
         },
         {
           iconName: "sentiment_calm",
@@ -51,7 +51,7 @@ const HIGHLIGHTS_BY_LOCALE: Record<SupportedHighlightLocale, HighlightsContent> 
           iconName: "cloud",
           title: "Private by design",
           description:
-            "No one has access to your data except you. Not Keezaa, not even Apple, complete privacy.",
+            "No one has access to your data except you. Not the developers, Kieser, or Apple can view your workout data.",
         },
         {
           iconName: "sentiment_calm",
@@ -74,7 +74,7 @@ const HIGHLIGHTS_BY_LOCALE: Record<SupportedHighlightLocale, HighlightsContent> 
           iconName: "cloud",
           title: "隐私优先",
           description:
-            "除了你自己，没有人可以访问你的数据。无论是 Keezaa 还是 Apple，都无法查看你的训练数据。",
+            "除了你自己，没有人可以访问你的数据。无论是开发者、Kieser 还是 Apple，都无法查看你的训练数据。",
         },
         {
           iconName: "sentiment_calm",

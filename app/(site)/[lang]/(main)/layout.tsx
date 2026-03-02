@@ -127,7 +127,7 @@ export default async function RootLayout({
                   { label: dict.footer.terms, href: localizePath(locale, "/appTOS") },
                   {
                     label: dict.footer.followUpdates,
-                    href: "https://github.com/benrudhart",
+                    href: "https://x.com/benrudhart",
                     external: true,
                   },
                 ]}
@@ -138,14 +138,6 @@ export default async function RootLayout({
                   />
                 }
                 footnoteLeading={`© ${new Date().getFullYear()} Keezaa. ${dict.footer.rightsReserved}`}
-                footnoteTrailing={
-                  <>
-                    {dict.footer.builtWith}{" "}
-                    <a target="_blank" href="https://appview.dev">
-                      AppView
-                    </a>
-                  </>
-                }
               />
             </>
           )}

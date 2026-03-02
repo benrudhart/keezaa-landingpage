@@ -17,10 +17,12 @@ export const deDictionary: SiteDictionary = {
   },
   hero: {
     title: "Keezaa",
-    subtitle:
-      "Die smarte Trainings-App für Kieser-Training®. Stoppuhr, Plan und Historie direkt am Handgelenk.",
+    subtitle: "Die intuitive App für Kieser® Training",
     downloadLabel: "Download",
     screenshotAlt: "Keezaa App Screenshot",
+  },
+  intro: {
+    text: "Klar. Einfach. Alles, was du für dein Kieser® Training brauchst.",
   },
   features: {
     items: [
@@ -80,7 +82,6 @@ export const deDictionary: SiteDictionary = {
     followUpdates: "Follow Updates",
     language: "Sprache",
     rightsReserved: "Alle Rechte vorbehalten.",
-    builtWith: "Website is built with",
   },
   referral: {
     pageTitle: "Empfehlungscode | Keezaa",

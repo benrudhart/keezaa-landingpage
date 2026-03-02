@@ -17,10 +17,12 @@ export const zhDictionary: SiteDictionary = {
   },
   hero: {
     title: "Keezaa",
-    subtitle:
-      "专为 Kieser Training® 打造的智能训练应用。计时器、训练计划和训练历史都可直接在手腕上查看。",
+    subtitle: "专为 Kieser® Training 打造的直观应用",
     downloadLabel: "下载",
     screenshotAlt: "Keezaa 应用截图",
+  },
+  intro: {
+    text: "清晰。简单。Kieser® Training 所需的一切，尽在其中。",
   },
   features: {
     items: [
@@ -80,7 +82,6 @@ export const zhDictionary: SiteDictionary = {
     followUpdates: "关注更新",
     language: "语言",
     rightsReserved: "保留所有权利。",
-    builtWith: "网站基于以下技术构建",
   },
   referral: {
     pageTitle: "推荐码 | Keezaa",

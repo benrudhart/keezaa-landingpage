@@ -62,4 +62,4 @@ AI agents working in this repo (React, TypeScript, Next.js).
 - Match existing code style and naming patterns.
 - Keep diffs minimal and focused.
 - Update or add comments only when they clarify non-obvious logic.
-
+- Keep localized content consistent across all supported languages. When changing copy in one locale, update the corresponding translations in the other locales in the same change unless the user explicitly asks otherwise.

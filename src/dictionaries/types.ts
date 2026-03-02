@@ -31,6 +31,9 @@ export interface SiteDictionary {
     downloadLabel: string;
     screenshotAlt: string;
   };
+  intro?: {
+    text: string;
+  };
   features: {
     items: FeatureItem[];
   };
@@ -40,7 +43,6 @@ export interface SiteDictionary {
     followUpdates: string;
     language: string;
     rightsReserved: string;
-    builtWith: string;
   };
   referral: {
     pageTitle: string;

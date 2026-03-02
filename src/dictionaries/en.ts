@@ -17,10 +17,12 @@ export const enDictionary: SiteDictionary = {
   },
   hero: {
     title: "Keezaa",
-    subtitle:
-      "The smart training app for Kieser Training®. Timer, plans, and workout history directly on your wrist.",
+    subtitle: "The intuitive app for Kieser® Training",
     downloadLabel: "Download",
     screenshotAlt: "Keezaa app screenshot",
+  },
+  intro: {
+    text: "Clear. Simple. Everything you need for your Kieser® Training.",
   },
   features: {
     items: [
@@ -80,7 +82,6 @@ export const enDictionary: SiteDictionary = {
     followUpdates: "Follow Updates",
     language: "Language",
     rightsReserved: "All rights reserved.",
-    builtWith: "Website is built with",
   },
   referral: {
     pageTitle: "Referral Code | Keezaa",

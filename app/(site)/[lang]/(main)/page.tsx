@@ -33,6 +33,10 @@ export default async function Page({
         />
       </Section>
 
+      {dict.intro && (
+        <Section title={dict.intro.text} paddingTop={12} paddingBottom={12} />
+      )}
+
       <Section navigationAnchor="features">
         <CardGrid rowHeight={280}>
           {dict.features.items.map((item) => (
