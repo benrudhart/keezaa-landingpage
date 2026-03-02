@@ -35,6 +35,8 @@ export const MATERIAL_SYMBOLS = [
   "tune",
   "folder_copy",
   "lock",
+  "open_in_new",
+  "star",
 ] as const;
 
 // Neutral

@@ -2,6 +2,7 @@ import { CardGrid } from "@/components/card_grid/card_grid";
 import { DownloadActionButton } from "@/components/download_action_button/download_action_button";
 import { Hero } from "@/components/hero/hero";
 import { Section } from "@/components/section/section";
+import { TestimonialsSection } from "@/components/testimonials_section/testimonials_section";
 
 export default function Page() {
   return (
@@ -87,6 +88,8 @@ export default function Page() {
           />
         </CardGrid>
       </Section>
+
+      <TestimonialsSection />
 
       <Section paddingTop={60} paddingBottom={160}>
         <DownloadActionButton

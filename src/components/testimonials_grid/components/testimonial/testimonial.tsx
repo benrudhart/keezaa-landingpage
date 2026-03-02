@@ -18,6 +18,7 @@ import YoutubeLogo from "@/public/app_view/youtube_logo.svg";
 type SourceKind = "appStore" | string;
 
 interface TestimonialProps {
+  headline?: string;
   message: string;
   authorName: string;
   authorTitle?: string;
@@ -29,6 +30,7 @@ interface TestimonialProps {
 }
 
 export function Testimonial({
+  headline,
   message,
   authorName,
   authorTitle,
@@ -45,6 +47,8 @@ export function Testimonial({
           <StarRating rating={5} starSize={18} />
         </div>
       )}
+
+      {headline && <div className={styles.headline}>{headline}</div>}
 
       <blockquote
         className={`${styles.message} ${
