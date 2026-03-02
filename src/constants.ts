@@ -26,16 +26,15 @@ export const WHIMSICAL_FONT = Caveat({ subsets: ["latin"] });
 export const CURSIVE_FONT = Dancing_Script({ subsets: ["latin"] });
 
 export const MATERIAL_SYMBOLS = [
-  "send",
-  "check_circle",
-  "star",
-  "mail",
-  "open_in_new",
-  "open_in_full",
-  "play_arrow",
-  "pause",
+  "timer",
+  "fitness_center",
+  "assignment",
+  "watch",
+  "timeline",
+  "favorite",
+  "tune",
+  "folder_copy",
   "lock",
-  "target",
 ] as const;
 
 // Neutral
