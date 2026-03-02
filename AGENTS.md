@@ -1,58 +1,65 @@
 # AGENTS.md
 
-This file provides guidance for coding agents working in this repository.
+This document outlines project-specific context and best practices for
+AI agents working in this repo (React, TypeScript, Next.js).
 
-## Project Overview
+## Project Context
+- Framework: Next.js App Router (`app/`)
+- Build target: static export (`output: "export"` in `next.config.ts`)
+- Styling: CSS Modules (`*.module.css`) + global styles in `src/global.css`
+- Path aliases: `@/*` → `src/*`, `@/public/*` → `public/*`
+- MDX support: `.mdx` pages enabled via `@next/mdx`
+- Images: unoptimized (static export) via `images.unoptimized: true`
 
-- Repo type: static marketing website
-- Core stack: plain HTML, CSS, and JavaScript
-- Key entry point: `index.html`
-- Supporting pages: `privacy.html`, `imprint.html`, `appPrivacy.html`, `appTOS.html`
+## General Principles
+- Prefer clarity and simplicity over cleverness.
+- Keep components small and focused; compose via props.
+- Avoid unnecessary abstractions and custom hooks unless reused.
+- Favor accessibility: semantic HTML, labels, `alt`, and keyboard-friendly UI.
 
-## Repository Structure
+## React Best Practices
+- Use function components and hooks.
+- Only add `"use client"` when needed (state, effects, browser APIs).
+- Keep server components pure; avoid client-only APIs in them.
+- Keep props typed and descriptive; avoid `any`.
+- Avoid inline anonymous functions in tight loops when it affects perf.
 
-- `index.html` and other root `.html` files: page markup and content
-- `css/`: styling (`base.css`, `main.css`, `vendor.css`, icon/font assets)
-- `js/`: client-side scripts (`main.js`, `plugins.js`, vendor scripts)
-- `images/` and root icons/favicons: static media assets
+## TypeScript Best Practices
+- Type component props and exported functions.
+- Prefer explicit types for public APIs and shared modules.
+- Use `as const` for literal objects used as enums.
+- Avoid type assertions unless narrowing is impossible.
 
-## Editing Guidelines
+## Next.js App Router Guidelines
+- Use `app/` segment structure and `page.tsx` for routes.
+- Static export means:
+  - Avoid dynamic rendering and runtime-only APIs.
+  - Avoid `cookies()`, `headers()`, or `draftMode()` in pages intended for export.
+  - Prefer static data and `generateStaticParams` for dynamic routes.
+- Use metadata exports in layouts/pages where needed.
+- Keep `layout.tsx` server-only unless there is a strong reason to opt into client.
 
-- Keep dependencies minimal; prefer vanilla HTML/CSS/JS over introducing frameworks.
-- Preserve existing file organization and naming conventions.
-- Make focused, small changes; avoid broad refactors unless explicitly requested.
-- Keep compatibility in mind for static hosting (no build step assumptions).
-- Do not modify generated/vendor assets unless the task explicitly requires it.
+## Styling Conventions
+- Use CSS Modules for component-level styles: `component.module.css`.
+- Keep global styles in `src/global.css`.
+- Avoid inline styles except for dynamic, small, one-off cases.
+- Prefer CSS variables for theme tokens and reuse.
 
-## HTML Conventions
+## Assets and Media
+- Place public assets in `public/` and reference via `/...` paths.
+- Use static images for export compatibility.
+- Prefer `CardGrid.StackedCard.Image` or existing media components for consistency.
 
-- Use semantic tags where possible.
-- Keep indentation and formatting consistent with surrounding code.
-- Preserve existing metadata, SEO, and social tags unless updating them is part of the task.
+## Accessibility
+- Provide meaningful `alt` text for non-decorative images.
+- Use `aria-label` when there is no visible label.
+- Keep contrast and color usage accessible across light/dark themes.
 
-## CSS Conventions
+## Testing and Scripts
+- Use existing npm scripts (`npm run build`, `npm run lint`).
 
-- Prefer extending `css/main.css` for site-specific styling.
-- Reuse existing utility/pattern classes before adding new ones.
-- Avoid aggressive global overrides that can affect unrelated sections.
+## When Editing
+- Match existing code style and naming patterns.
+- Keep diffs minimal and focused.
+- Update or add comments only when they clarify non-obvious logic.
 
-## JavaScript Conventions
-
-- Prefer small, defensive DOM updates.
-- Avoid introducing heavy runtime dependencies.
-- Keep behavior progressive: page should remain usable if scripts fail.
-
-## Verification Checklist
-
-After changes, agents should:
-
-1. Review changed files for accidental formatting or unrelated edits.
-2. Verify links, image paths, and asset references are still correct.
-3. Sanity-check key pages in a browser (`index.html` plus any touched page).
-4. Confirm no secrets or environment-specific values were introduced.
-
-## Git Hygiene
-
-- Do not rewrite history unless explicitly requested.
-- Keep commit messages concise and outcome-oriented when commits are requested.
-- Do not commit unrelated local changes.
