@@ -29,6 +29,7 @@ export interface SiteDictionary {
     title: string;
     subtitle: string;
     downloadLabel: string;
+    screenshotAlt: string;
   };
   features: {
     items: FeatureItem[];
@@ -40,6 +41,30 @@ export interface SiteDictionary {
     language: string;
     rightsReserved: string;
     builtWith: string;
+  };
+  referral: {
+    pageTitle: string;
+    pageDescription: string;
+    invalidPageTitle: string;
+    title: string;
+    codeLead: string;
+    codeHint: string;
+    codeCopied: string;
+    codeCopyError: string;
+    rewardIntro: string;
+    rewardTitle: string;
+    rewardText: string;
+    stepDownloadTitle: string;
+    stepDownloadText: string;
+    appStoreBadgeAlt: string;
+    appStoreBadgeLocale: string;
+    stepOpenTitle: string;
+    stepOpenText: string;
+    openInApp: string;
+    platformNote: string;
+    invalidTitle: string;
+    invalidMessage: string;
+    backHome: string;
   };
   legal: {
     privacyTitle: string;

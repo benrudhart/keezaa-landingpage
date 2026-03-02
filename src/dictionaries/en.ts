@@ -20,6 +20,7 @@ export const enDictionary: SiteDictionary = {
     subtitle:
       "The smart training app for Kieser Training®. Timer, plans, and workout history directly on your wrist.",
     downloadLabel: "Download",
+    screenshotAlt: "Keezaa app screenshot",
   },
   features: {
     items: [
@@ -80,6 +81,32 @@ export const enDictionary: SiteDictionary = {
     language: "Language",
     rightsReserved: "All rights reserved.",
     builtWith: "Website is built with",
+  },
+  referral: {
+    pageTitle: "Referral Code | Keezaa",
+    pageDescription: "Keezaa page for referral code and reward",
+    invalidPageTitle: "Referral Code Not Recognized | Keezaa",
+    title: "Kieser-Training App",
+    codeLead: "Your referral code",
+    codeHint: "Tap the code to copy it.",
+    codeCopied: "Code copied",
+    codeCopyError: "Could not copy code",
+    rewardIntro: "Your reward:",
+    rewardTitle: "Use the app free for two months",
+    rewardText: "",
+    stepDownloadTitle: "1. Download the app",
+    stepDownloadText: "",
+    appStoreBadgeAlt: "Download on the App Store",
+    appStoreBadgeLocale: "en-us",
+    stepOpenTitle: "2. Open the app",
+    stepOpenText: "",
+    openInApp: "Open Keezaa",
+    platformNote:
+      "Sorry - the Keezaa app is built exclusively for iPhone & Apple Watch. Please open this on an iPhone.",
+    invalidTitle: "Code not recognized",
+    invalidMessage:
+      "Your referral code could not be recognized. Please ask the person who referred you for a new link.",
+    backHome: "Back to homepage",
   },
   legal: {
     privacyTitle: "Privacy Policy for this Website",

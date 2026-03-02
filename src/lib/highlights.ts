@@ -61,6 +61,29 @@ const HIGHLIGHTS_BY_LOCALE: Record<SupportedHighlightLocale, HighlightsContent> 
         },
       ],
     },
+    zh: {
+      sectionTitle: "这款应用的原则",
+      items: [
+        {
+          iconName: "no_accounts",
+          title: "无需注册",
+          description:
+            "打开即可开始使用。Keezaa 使用你的 Apple 账户，不需要额外注册。",
+        },
+        {
+          iconName: "cloud",
+          title: "隐私优先",
+          description:
+            "除了你自己，没有人可以访问你的数据。无论是 Keezaa 还是 Apple，都无法查看你的训练数据。",
+        },
+        {
+          iconName: "sentiment_calm",
+          title: "没有广告",
+          description:
+            "没有广告，没有烦人的弹窗，也没有增长噪音。只有你的训练，以及你真正需要的数据。",
+        },
+      ],
+    },
   };
 
 export function getHighlights(locale: SupportedHighlightLocale = "de") {

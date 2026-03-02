@@ -1,64 +1,19 @@
 "use client";
 
 import { APP_ID } from "@/constants";
-import { type Locale } from "@/lib/i18n";
+import type { SiteDictionary } from "@/dictionaries/types";
+import { localizePath, type Locale } from "@/lib/i18n";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import styles from "./referral_page.module.css";
 
-const CONTENT = {
-  de: {
-    pageTitle: "Empfehlungscode | Keezaa",
-    invalidPageTitle: "Empfehlungscode nicht erkannt | Keezaa",
-    title: "Kieser-Training App",
-    codeLead: "Dein Empfehlungscode",
-    codeHint: "Tippe auf den Code, um ihn zu kopieren.",
-    codeCopied: "Code kopiert",
-    codeCopyError: "Code konnte nicht kopiert werden",
-    rewardIntro: "Dein Geschenk:",
-    rewardTitle: "Nutze die App zwei Monate kostenlos",
-    rewardText: "",
-    stepDownloadTitle: "1. App herunterladen",
-    stepDownloadText: "",
-    appStoreBadgeAlt: "Download im App Store",
-    stepOpenTitle: "2. App öffnen",
-    stepOpenText: "",
-    openInApp: "Keezaa öffnen",
-    platformNote:
-      "Sorry - die Keezaa App ist exklusiv für iPhone & Apple Watch entwickelt. Bitte öffne dies auf einem iPhone.",
-    invalidTitle: "Code nicht erkannt",
-    invalidMessage:
-      "Dein Empfehlungscode konnte leider nicht erkannt werden. Bitte frage die Person, die dich geworben hat, nach einem neuen Link.",
-    backHome: "Zur Startseite",
-  },
-  en: {
-    pageTitle: "Referral Code | Keezaa",
-    invalidPageTitle: "Referral Code Not Recognized | Keezaa",
-    title: "Kieser-Training App",
-    codeLead: "Your referral code",
-    codeHint: "Tap the code to copy it.",
-    codeCopied: "Code copied",
-    codeCopyError: "Could not copy code",
-    rewardIntro: "Your reward:",
-    rewardTitle: "Use the app free for two months",
-    rewardText: "",
-    stepDownloadTitle: "1. Download the app",
-    stepDownloadText: "",
-    appStoreBadgeAlt: "Download on the App Store",
-    stepOpenTitle: "2. Open the app",
-    stepOpenText: "",
-    openInApp: "Open Keezaa",
-    platformNote:
-      "Sorry - the Keezaa app is built exclusively for iPhone & Apple Watch. Please open this on an iPhone.",
-    invalidTitle: "Code not recognized",
-    invalidMessage:
-      "Your referral code could not be recognized. Please ask the person who referred you for a new link.",
-    backHome: "Back to homepage",
-  },
-} as const;
+interface ReferralPageProps {
+  locale: Locale;
+  content: SiteDictionary["referral"];
+}
 
-export function ReferralPage({ locale }: { locale: Locale }) {
+export function ReferralPage({ locale, content }: ReferralPageProps) {
   const [code, setCode] = useState("");
   const [copyFeedback, setCopyFeedback] = useState("");
   const [isIOS, setIsIOS] = useState(false);
@@ -69,7 +24,7 @@ export function ReferralPage({ locale }: { locale: Locale }) {
     setIsIOS(detectIOSDevice());
   }, []);
 
-  const t = CONTENT[locale];
+  const t = content;
   const isValidCode = useMemo(() => /^[A-Z0-9]{3,12}$/.test(code), [code]);
   const claimLink = useMemo(() => {
     return `keezaa://claim-code?code=${encodeURIComponent(code)}&type=referral`;
@@ -115,9 +70,9 @@ export function ReferralPage({ locale }: { locale: Locale }) {
       <main className={styles.page}>
         <section className={styles.section}>
           <div className={styles.shell}>
-          <h1 className={styles.title}>{t.invalidTitle}</h1>
+            <h1 className={styles.title}>{t.invalidTitle}</h1>
             <p className={styles.invalidMessage}>{t.invalidMessage}</p>
-            <Link href="/" className={styles.secondaryAction}>
+            <Link href={localizePath(locale)} className={styles.secondaryAction}>
               {t.backHome}
             </Link>
           </div>
@@ -174,7 +129,7 @@ export function ReferralPage({ locale }: { locale: Locale }) {
               >
                 <Image
                   className={styles.appStoreBadgeImage}
-                  src={`https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/${locale === "de" ? "de-de" : "en-us"}?size=250x83&releaseDate=1528934400`}
+                  src={`https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/${t.appStoreBadgeLocale}?size=250x83&releaseDate=1528934400`}
                   alt={t.appStoreBadgeAlt}
                   width={250}
                   height={83}

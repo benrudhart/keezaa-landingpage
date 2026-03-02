@@ -3,6 +3,7 @@ import { getDictionary } from "@/dictionaries";
 import type { Metadata } from "next";
 import PrivacyDe from "./content.de.mdx";
 import PrivacyEn from "./content.en.mdx";
+import PrivacyZh from "./content.zh.mdx";
 
 export async function generateMetadata({
   params,
@@ -20,6 +21,7 @@ export async function generateMetadata({
       languages: {
         de: "/de/privacy",
         en: "/en/privacy",
+        zh: "/zh/privacy",
       },
     },
   };
@@ -33,5 +35,13 @@ export default async function PrivacyPage({
   const { lang } = await params;
   const locale = isSupportedLocale(lang) ? (lang as Locale) : DEFAULT_LOCALE;
 
-  return locale === "de" ? <PrivacyDe /> : <PrivacyEn />;
+  if (locale === "de") {
+    return <PrivacyDe />;
+  }
+
+  if (locale === "zh") {
+    return <PrivacyZh />;
+  }
+
+  return <PrivacyEn />;
 }

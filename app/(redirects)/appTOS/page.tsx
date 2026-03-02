@@ -10,7 +10,7 @@ export default function LegacyAppTermsRedirectPage() {
 
   return (
     <main style={{ padding: 32 }}>
-      <Link href="/de/appTOS/">Weiter zu App TOS</Link>
+      <Link href="/de/appTOS/">Open app terms page</Link>
     </main>
   );
 }

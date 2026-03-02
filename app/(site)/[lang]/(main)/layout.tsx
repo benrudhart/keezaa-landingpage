@@ -31,7 +31,7 @@ export async function generateMetadata({
   const { lang } = await params;
   const locale = isSupportedLocale(lang) ? lang : DEFAULT_LOCALE;
   const dict = getDictionary(locale);
-  const pathPrefix = locale === "de" ? "/de" : "/en";
+  const pathPrefix = `/${locale}`;
 
   return {
     title: dict.metadata.title,
@@ -42,6 +42,7 @@ export async function generateMetadata({
       languages: {
         de: "/de",
         en: "/en",
+        zh: "/zh",
       },
     },
     openGraph: {
@@ -107,6 +108,7 @@ export default async function RootLayout({
               <Navbar
                 icon={<AppIcon src="/keezaa_app_icon.png" />}
                 appName="Keezaa"
+                appHref={localizePath(locale)}
                 links={[
                   { label: dict.navbar.features, href: localizePath(locale, "/#features") },
                   { label: dict.navbar.testimonials, href: localizePath(locale, "/#testimonials") },

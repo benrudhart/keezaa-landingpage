@@ -3,6 +3,7 @@ import { getDictionary } from "@/dictionaries";
 import type { Metadata } from "next";
 import AppTermsDe from "./content.de.mdx";
 import AppTermsEn from "./content.en.mdx";
+import AppTermsZh from "./content.zh.mdx";
 
 export async function generateMetadata({
   params,
@@ -20,6 +21,7 @@ export async function generateMetadata({
       languages: {
         de: "/de/appTOS",
         en: "/en/appTOS",
+        zh: "/zh/appTOS",
       },
     },
   };
@@ -33,5 +35,13 @@ export default async function AppTermsPage({
   const { lang } = await params;
   const locale = isSupportedLocale(lang) ? (lang as Locale) : DEFAULT_LOCALE;
 
-  return locale === "de" ? <AppTermsDe /> : <AppTermsEn />;
+  if (locale === "de") {
+    return <AppTermsDe />;
+  }
+
+  if (locale === "zh") {
+    return <AppTermsZh />;
+  }
+
+  return <AppTermsEn />;
 }

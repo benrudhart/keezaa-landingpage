@@ -1,4 +1,4 @@
-export const SUPPORTED_LOCALES = ["de", "en"] as const;
+export const SUPPORTED_LOCALES = ["de", "en", "zh"] as const;
 
 export type Locale = (typeof SUPPORTED_LOCALES)[number];
 
@@ -19,6 +19,11 @@ export const LOCALE_OPTIONS: Record<
     shortLabel: "EN",
     label: "English",
     flag: "🇬🇧",
+  },
+  zh: {
+    shortLabel: "ZH",
+    label: "简体中文",
+    flag: "🇨🇳",
   },
 };
 
@@ -43,10 +48,6 @@ export function resolveLocale(value?: string | null): Locale {
 
   const language = normalized.split("-")[0];
   return isSupportedLocale(language) ? language : DEFAULT_LOCALE;
-}
-
-export function getAlternateLocale(locale: Locale): Locale {
-  return locale === "de" ? "en" : "de";
 }
 
 export function localizePath(locale: Locale, path = ""): string {

@@ -3,6 +3,7 @@ import { getDictionary } from "@/dictionaries";
 import type { Metadata } from "next";
 import AppPrivacyDe from "./content.de.mdx";
 import AppPrivacyEn from "./content.en.mdx";
+import AppPrivacyZh from "./content.zh.mdx";
 
 export async function generateMetadata({
   params,
@@ -20,6 +21,7 @@ export async function generateMetadata({
       languages: {
         de: "/de/appPrivacy",
         en: "/en/appPrivacy",
+        zh: "/zh/appPrivacy",
       },
     },
   };
@@ -33,5 +35,13 @@ export default async function AppPrivacyPage({
   const { lang } = await params;
   const locale = isSupportedLocale(lang) ? (lang as Locale) : DEFAULT_LOCALE;
 
-  return locale === "de" ? <AppPrivacyDe /> : <AppPrivacyEn />;
+  if (locale === "de") {
+    return <AppPrivacyDe />;
+  }
+
+  if (locale === "zh") {
+    return <AppPrivacyZh />;
+  }
+
+  return <AppPrivacyEn />;
 }

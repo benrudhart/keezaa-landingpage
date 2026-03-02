@@ -6,18 +6,25 @@ import styles from "./navbar.module.css";
 interface NavbarProps {
   icon: React.ReactNode;
   appName: string;
+  appHref?: string;
   links?: { label: string; href: string; external?: boolean }[];
   action: React.ReactNode;
 }
 
-export function Navbar({ icon, appName, links, action }: NavbarProps) {
+export function Navbar({
+  icon,
+  appName,
+  appHref = "/",
+  links,
+  action,
+}: NavbarProps) {
   return (
     <>
       <div className={styles.spacer}></div>
       <div className={styles.navbarContainer}>
         <nav className={styles.navbar}>
           <div className={styles.content}>
-            <Link className={styles.appIdentity} href="/">
+            <Link className={styles.appIdentity} href={appHref}>
               <div className={styles.appIconContainer}>{icon}</div>
 
               <div className={styles.appName}>{appName}</div>

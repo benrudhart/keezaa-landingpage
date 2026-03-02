@@ -26,7 +26,7 @@ export default async function Page({
             <Hero.Image
               src="/hero-screenshot.png"
               bezel="iPhone Air Space Black"
-              alt="Keezaa App Screenshot"
+              alt={dict.hero.screenshotAlt}
             />
           }
           action={<DownloadActionButton size="medium" label={dict.hero.downloadLabel} />}

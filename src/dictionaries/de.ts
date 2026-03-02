@@ -20,6 +20,7 @@ export const deDictionary: SiteDictionary = {
     subtitle:
       "Die smarte Trainings-App für Kieser-Training®. Stoppuhr, Plan und Historie direkt am Handgelenk.",
     downloadLabel: "Download",
+    screenshotAlt: "Keezaa App Screenshot",
   },
   features: {
     items: [
@@ -80,6 +81,32 @@ export const deDictionary: SiteDictionary = {
     language: "Sprache",
     rightsReserved: "Alle Rechte vorbehalten.",
     builtWith: "Website is built with",
+  },
+  referral: {
+    pageTitle: "Empfehlungscode | Keezaa",
+    pageDescription: "Keezaa Seite für Empfehlungscode und Belohnung",
+    invalidPageTitle: "Empfehlungscode nicht erkannt | Keezaa",
+    title: "Kieser-Training App",
+    codeLead: "Dein Empfehlungscode",
+    codeHint: "Tippe auf den Code, um ihn zu kopieren.",
+    codeCopied: "Code kopiert",
+    codeCopyError: "Code konnte nicht kopiert werden",
+    rewardIntro: "Dein Geschenk:",
+    rewardTitle: "Nutze die App zwei Monate kostenlos",
+    rewardText: "",
+    stepDownloadTitle: "1. App herunterladen",
+    stepDownloadText: "",
+    appStoreBadgeAlt: "Download im App Store",
+    appStoreBadgeLocale: "de-de",
+    stepOpenTitle: "2. App öffnen",
+    stepOpenText: "",
+    openInApp: "Keezaa öffnen",
+    platformNote:
+      "Sorry - die Keezaa App ist exklusiv für iPhone & Apple Watch entwickelt. Bitte öffne dies auf einem iPhone.",
+    invalidTitle: "Code nicht erkannt",
+    invalidMessage:
+      "Dein Empfehlungscode konnte leider nicht erkannt werden. Bitte frage die Person, die dich geworben hat, nach einem neuen Link.",
+    backHome: "Zur Startseite",
   },
   legal: {
     privacyTitle: "Datenschutzerklärung für diese Website",

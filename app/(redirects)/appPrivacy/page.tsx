@@ -10,7 +10,7 @@ export default function LegacyAppPrivacyRedirectPage() {
 
   return (
     <main style={{ padding: 32 }}>
-      <Link href="/de/appPrivacy/">Weiter zu App Privacy</Link>
+      <Link href="/de/appPrivacy/">Open app privacy page</Link>
     </main>
   );
 }

@@ -1,7 +1,12 @@
 "use client";
 
 import { Icon } from "@/components/icon/icon";
-import { LOCALE_OPTIONS, type Locale } from "@/lib/i18n";
+import {
+  LOCALE_OPTIONS,
+  SUPPORTED_LOCALES,
+  isSupportedLocale,
+  type Locale,
+} from "@/lib/i18n";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -57,7 +62,7 @@ export function LanguageSwitcher({ locale, title }: LanguageSwitcherProps) {
 
       {isOpen && (
         <div className={styles.popup} role="menu" aria-label={title}>
-          {(Object.keys(LOCALE_OPTIONS) as Locale[]).map((targetLocale) => (
+          {SUPPORTED_LOCALES.map((targetLocale) => (
             <Link
               key={targetLocale}
               href={buildLocalizedHref(pathname, searchParams, targetLocale)}
@@ -86,7 +91,7 @@ function buildLocalizedHref(
 ) {
   const segments = pathname.split("/");
 
-  if (segments.length > 1 && (segments[1] === "de" || segments[1] === "en")) {
+  if (segments.length > 1 && isSupportedLocale(segments[1])) {
     segments[1] = targetLocale;
   } else {
     segments.splice(1, 0, targetLocale);

@@ -13,7 +13,7 @@ export const SUPPORTED_TESTIMONIAL_LOCALES = [
   "fr",
   "it",
   "sv",
-  "zh-Hans",
+  "zh",
 ] as const;
 
 export type SupportedTestimonialLocale =
@@ -238,7 +238,7 @@ const TESTIMONIALS_BY_LOCALE: Record<
       },
     ],
   },
-  "zh-Hans": {
+  zh: {
     sectionTitle: "用户评价",
     reviews: [
       {
