@@ -1,5 +1,6 @@
 import { APP_ID, IS_WAITLIST_ENABLED, THEME } from "@/constants";
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 
 import { AppIcon } from "@/components/app_icon/app_icon";
 import { CompactFooter } from "@/components/compact_footer/compact_footer";
@@ -68,6 +69,11 @@ export default function RootLayout({
         )}
 
         <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48" />
+        <Script
+          src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js"
+          data-app-id="D62C9B0D-D105-4F3B-BA77-1B4B6B85B00D"
+          strategy="beforeInteractive"
+        />
 
         <ThemeStyle />
         <MaterialSymbolsLink />
