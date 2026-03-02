@@ -1,8 +1,6 @@
-import { AppleFeatureLaurelsBadge } from "@/components/apple_feature_laurels_badge/apple_feature_laurels_badge";
 import { CardGrid } from "@/components/card_grid/card_grid";
 import { DownloadActionButton } from "@/components/download_action_button/download_action_button";
 import { Hero } from "@/components/hero/hero";
-import { RatingLaurelsBadge } from "@/components/rating_laurels_badge/rating_laurels_badge";
 import { Section } from "@/components/section/section";
 import { TestimonialsGrid } from "@/components/testimonials_grid/testimonials_grid";
 
@@ -11,24 +9,14 @@ export default function Page() {
     <>
       <Section paddingTop={100}>
         <Hero
-          title="App Title"
-          subtitle="Short app description that highlights what the app does and its key value"
+          title="Keezaa"
+          subtitle="Die smarte Trainings-App für Kieser-Training®. Stoppuhr, Plan und Historie direkt am Handgelenk."
           media={
             <Hero.Image
               src="/app_view/screenshot_placeholder.png"
               bezel="iPhone 17 Black"
-              alt=""
+              alt="Keezaa App Screenshot"
             />
-          }
-          badges={
-            <>
-              <RatingLaurelsBadge
-                showStars={true}
-                rating={4.9}
-                caption="worldwide rating"
-              />
-              <AppleFeatureLaurelsBadge featureName="App of the Day" />
-            </>
           }
           action={<DownloadActionButton size="medium" />}
         />
