@@ -105,8 +105,7 @@ export default function RootLayout({
                   { label: "Datenschutz", href: "/privacy" },
                   {
                     label: "Nutzungsbedingungen",
-                    href: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
-                    external: true,
+                    href: "/appTOS",
                   },
                   {
                     label: "Follow Updates",

@@ -1,6 +1,6 @@
 import { Article } from "@/components/article/article";
 
-export default function TermsPageLayout({
+export default function AppPrivacyPageLayout({
   children,
 }: {
   children: React.ReactNode;
