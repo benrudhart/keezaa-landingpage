@@ -1,6 +1,5 @@
-import { APP_ID, IS_WAITLIST_ENABLED, THEME } from "@/constants";
+import { APP_ID, IS_WAITLIST_ENABLED, TELEMETRYDECK_APP_ID, THEME } from "@/constants";
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 import { Suspense } from "react";
 
 import { getDictionary } from "@/dictionaries";
@@ -93,10 +92,10 @@ export default async function RootLayout({
         )}
 
         <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48" />
-        <Script
+        <script
+          defer
           src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js"
-          data-app-id="D62C9B0D-D105-4F3B-BA77-1B4B6B85B00D"
-          strategy="beforeInteractive"
+          data-app-id={TELEMETRYDECK_APP_ID}
         />
 
         <ThemeStyle />

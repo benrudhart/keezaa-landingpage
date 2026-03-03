@@ -15,6 +15,7 @@ export const THEME: "system" | "light" | "dark" = "system";
  * Example: "6502667826"
  */
 export const APP_ID = "1337707625";
+export const TELEMETRYDECK_APP_ID = "D62C9B0D-D105-4F3B-BA77-1B4B6B85B00D";
 
 /**
  * Custom fonts for 'whimsical' and 'cursive' font styles.
